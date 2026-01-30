@@ -62,6 +62,18 @@ require "nvim-treesitter.config".setup {
     install_dir = vim.fs.joinpath(vim.fn.stdpath('data') --[[@as string]], 'site'),
 }
 
+vim.lsp.config("pylsp", {
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    maxLineLength = 120
+                }
+            }
+        }
+    }
+})
+
 vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
