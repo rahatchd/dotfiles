@@ -41,7 +41,7 @@ vim.pack.add {
 
 vim.lsp.enable {
     "clangd",
-    "pylsp",
+    "ty",
     "lua_ls",
 }
 
@@ -61,18 +61,6 @@ require "nvim-treesitter.config".setup {
     auto_install = true,
     install_dir = vim.fs.joinpath(vim.fn.stdpath('data') --[[@as string]], 'site'),
 }
-
-vim.lsp.config("pylsp", {
-    settings = {
-        pylsp = {
-            plugins = {
-                pycodestyle = {
-                    maxLineLength = 120
-                }
-            }
-        }
-    }
-})
 
 vim.lsp.config("lua_ls", {
     settings = {
